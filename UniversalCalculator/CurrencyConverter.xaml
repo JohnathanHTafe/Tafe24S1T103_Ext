@@ -9,19 +9,115 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock x:Name="CurrencyconvertercalculatorTextblock" HorizontalAlignment="Left" Height="109" Margin="369,133,0,0" TextWrapping="Wrap" Text="Currency Converter Calculator" VerticalAlignment="Top" Width="863" SelectionChanged="TextBlock_SelectionChanged" FontSize="36"/>
-        <TextBlock x:Name="AmountTextblock" HorizontalAlignment="Left" Height="63" Margin="142,255,0,0" TextWrapping="Wrap" Text="Amount $" VerticalAlignment="Top" Width="270" FontSize="36"/>
-        <TextBlock x:Name="FromTextbox" HorizontalAlignment="Left" Height="63" Margin="519,255,0,0" TextWrapping="Wrap" Text="From" VerticalAlignment="Top" Width="303" FontSize="36"/>
-        <TextBlock x:Name="ToTextbox" HorizontalAlignment="Left" Height="63" Margin="1000,259,0,0" TextWrapping="Wrap" Text="To" VerticalAlignment="Top" Width="303" FontSize="36"/>
-        <TextBox x:Name="AmountTextbox" HorizontalAlignment="Left" Height="68" Margin="142,348,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="313"/>
-        <ComboBox x:Name="FromCombobox" Height="68" Margin="519,348,0,0" Width="326"/>
-        <ComboBox x:Name="ToCombobox" Height="68" Margin="921,348,0,0" Width="330"/>
-        <TextBox x:Name="AmountcurrencyequalsTextbox" HorizontalAlignment="Left" Height="36" Margin="142,464,0,0" TextWrapping="Wrap" Text="AmountcurrencyequalsTextbox" VerticalAlignment="Top" Width="313"/>
-        <TextBox x:Name="ConversionAmounttextbox" HorizontalAlignment="Left" Height="36" Margin="142,542,0,0" TextWrapping="Wrap" Text="ConversionAmounttextbox" VerticalAlignment="Top" Width="313"/>
-        <TextBox x:Name="Fromratetextbox" HorizontalAlignment="Left" Height="36" Margin="142,617,0,0" TextWrapping="Wrap" Text="Fromratetextbox" VerticalAlignment="Top" Width="313"/>
-        <TextBox x:Name="Toratetextbox" HorizontalAlignment="Left" Height="36" Margin="142,699,0,0" TextWrapping="Wrap" Text="Toratetextbox" VerticalAlignment="Top" Width="313"/>
-        <Button x:Name="CurrencyconversionButton" Content="Currency Conversion" Height="65" Margin="560,735,0,0" VerticalAlignment="Top" Width="423"/>
-        <Button x:Name="ExitButton" Content="Exit" Height="60" Margin="682,848,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="CurrencyconversionButton"
+				Content="Currency Conversion"
+				Margin="0,518,0,0"
+				VerticalAlignment="Top"
+				Click="ConversionButton_Click"
+				HorizontalAlignment="Center"
+				Width="420"
+				Height="65"
+				FontSize="25"
+				FontWeight="Bold"
+				Background="LightGreen"/>
+        <Button x:Name="ExitButton"
+				Content="Exit"
+				Margin="0,606,0,0"
+				VerticalAlignment="Top"
+				Click="exitButton_Click"
+				HorizontalAlignment="Center"
+				Height="60"
+				Width="200"
+				FontSize="25"
+				FontWeight="Bold"
+				Background="PaleVioletRed"/>
+        <TextBlock x:Name="CurrencyconvertercalculatorTextblock"
+				   HorizontalAlignment="Left"
+				   Height="57"
+				   Margin="367,101,0,0"
+				   TextWrapping="Wrap"
+				   Text="Currency Converter Calculator"
+				   VerticalAlignment="Top"
+				   Width="587"
+				   FontSize="36"
+				   FontWeight="ExtraBold"/>
+        <TextBlock x:Name="AmountTextblock"
+				   HorizontalAlignment="Left"
+				   Margin="120,206,0,0"
+				   TextWrapping="Wrap"
+				   Text="Amount $"
+				   VerticalAlignment="Top"
+				   Height="60"
+				   Width="220"
+				   FontSize="36"/>
+        <TextBlock x:Name="FromTextbox"
+				   HorizontalAlignment="Left"
+				   Margin="528,206,0,0"
+				   TextWrapping="Wrap"
+				   Text="From"
+				   VerticalAlignment="Top"
+				   Height="60"
+				   Width="220"
+				   FontSize="36"/>
+        <TextBlock x:Name="ToTextbox"
+				   HorizontalAlignment="Left"
+				   Margin="882,206,0,0"
+				   TextWrapping="Wrap"
+				   Text="To"
+				   VerticalAlignment="Top"
+				   Height="60"
+				   Width="220"
+				   FontSize="36"/>
+        <TextBlock x:Name="outputAmountFromTextBlock"
+				   HorizontalAlignment="Left"
+				   Margin="120,344,0,0"
+				   TextWrapping="Wrap"
+				   Text="Amount From"
+				   VerticalAlignment="Top"/>
+        <TextBlock x:Name="outputAmountToTextBlock"
+				   HorizontalAlignment="Left"
+				   Margin="120,390,0,0"
+				   TextWrapping="Wrap"
+				   Text="Amount To"
+				   VerticalAlignment="Top"/>
+        <TextBlock x:Name="fromConversionRateTextBlock"
+				   HorizontalAlignment="Left"
+				   Margin="120,441,0,0"
+				   TextWrapping="Wrap"
+				   Text="From Conversion Rate"
+				   VerticalAlignment="Top"
+				   RenderTransformOrigin="0.538,0.329"/>
+        <TextBlock x:Name="toConversionRateTextBlock"
+				   HorizontalAlignment="Left"
+				   Margin="120,485,0,0"
+				   TextWrapping="Wrap"
+				   Text="To Conversion Rate"
+				   VerticalAlignment="Top"/>
+        <TextBox x:Name="amountTextBox"
+				 HorizontalAlignment="Left"
+				 Margin="120,271,0,0"
+				 TextWrapping="Wrap"
+				 VerticalAlignment="Top"
+				 Width="300"
+				 Height="50"/>
+        <ComboBox x:Name="fromCurrencyComboBox"
+				  Margin="512,271,0,0"
+				  Width="300"
+				  Height="50">
+			<ComboBoxItem>US Dollar</ComboBoxItem>
+			<ComboBoxItem IsSelected="True">Euro</ComboBoxItem>
+			<ComboBoxItem>British Pound</ComboBoxItem>
+			<ComboBoxItem>Indian Rupee</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="toCurrencyComboBox"
+				  Margin="882,271,0,0"
+				  Width="300"
+				  Height="50">
+			<ComboBoxItem IsSelected="True">US Dollar</ComboBoxItem>
+			<ComboBoxItem>Euro</ComboBoxItem>
+			<ComboBoxItem>British Pound</ComboBoxItem>
+			<ComboBoxItem>Indian Rupee</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Page>
