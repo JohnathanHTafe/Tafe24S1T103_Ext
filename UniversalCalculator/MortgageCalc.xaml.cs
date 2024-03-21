@@ -98,9 +98,11 @@ namespace Calculator
 				monthlyInterestRateBox.SelectAll();
 				return;
 			}
-			double part1 = Math.Pow(i + 1, n);
-			double part2 = Math.Pow(i + 1, n - 1);
-			M = ((p*(i*(part1))) / (part2));
+			//double part1 = Math.Pow(i + 1, n);
+			//double part2 = Math.Pow(i + 1, n - 1);
+			double part1 = Math.Pow(1 + i, n);
+			M = p * i * part1 / (part1 - 1);
+			//M = ((p*(i*(part1))) / (part2));
 			monthlyPaymentBox.Text = M.ToString("C");
 		}
 	}
