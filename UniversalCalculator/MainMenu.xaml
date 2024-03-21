@@ -8,14 +8,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="129" Margin="452,10,0,0" Text="Universal Calculator" TextWrapping="Wrap" VerticalAlignment="Top" Width="574" FontSize="50" FontWeight="ExtraBold" TextAlignment="Center"/>
-        <Button Content="Maths Calculator" HorizontalAlignment="Left" Height="170" Margin="452,144,0,0" VerticalAlignment="Top" Width="574" FontSize="40" FontWeight="Bold" Click="MathsCalcButton_Click"/>
-        <Button Content="Mortgage Calculator" HorizontalAlignment="Left" Height="170" Margin="452,355,0,0" VerticalAlignment="Top" Width="574" FontSize="40" FontWeight="Bold" Click="MortgageButton_Click" />
-        <Button Content="Currency Converter" HorizontalAlignment="Left" Height="170" Margin="452,570,0,0" VerticalAlignment="Top" Width="574" FontSize="40" FontWeight="Bold" Click="CurrencyConverterButton_Click" />
-        <Button Content="Exit" HorizontalAlignment="Left" Height="170" Margin="452,777,0,0" VerticalAlignment="Top" Width="574" FontSize="40" FontWeight="Bold" Click="ExitButton_Click"/>
-        <Image x:Name="abacusInput" HorizontalAlignment="Left" Height="301" Margin="1167,71,0,0" VerticalAlignment="Top" Width="290" Source="abacus.PNG" />
+	<Grid>
+		<TextBlock HorizontalAlignment="Left" Height="129" Margin="452,10,0,0" Text="Universal Calculator" TextWrapping="Wrap" VerticalAlignment="Top" Width="574" FontSize="50" FontWeight="ExtraBold" TextAlignment="Center"/>
+		<Button Content="Maths Calculator" HorizontalAlignment="Left" Height="110" Margin="452,144,0,0" VerticalAlignment="Top" Width="523" FontSize="40" FontWeight="Bold" Click="MathsCalcButton_Click"/>
+		<Button Content="Mortgage Calculator" HorizontalAlignment="Left" Height="95" Margin="452,310,0,0" VerticalAlignment="Top" Width="523" FontSize="40" FontWeight="Bold" Click="MortgageButton_Click" />
+		<Button Content="Currency Converter" HorizontalAlignment="Left" Height="107" Margin="452,0,0,0" VerticalAlignment="Center" Width="523" FontSize="40" FontWeight="Bold" Click="CurrencyConverterButton_Click" />
+		<Button Content="Exit" HorizontalAlignment="Left" Height="116" Margin="452,777,0,0" VerticalAlignment="Top" Width="523" FontSize="40" FontWeight="Bold" Click="ExitButton_Click"/>
+		<Image x:Name="abacusInput" HorizontalAlignment="Left" Height="301" Margin="1167,71,0,0" VerticalAlignment="Top" Width="290" Source="abacus.PNG" />
+		<Button Content="Trip Calculator" HorizontalAlignment="Left" Height="116" Margin="452,609,0,0" VerticalAlignment="Top" Width="523" FontSize="40" FontWeight="Bold"/>
 
 
-    </Grid>
+	</Grid>
 </Page>
